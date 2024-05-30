@@ -1,4 +1,5 @@
-import { Container, Text, VStack, Heading, Box, Image, SimpleGrid } from "@chakra-ui/react";
+import { Container, Text, VStack, Heading, Box, Image, SimpleGrid, Button } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 
 const recipes = [
   {
@@ -24,6 +25,7 @@ const Index = () => {
       <VStack spacing={8}>
         <Heading as="h1" size="2xl">Recipe Sharing Website</Heading>
         <Text fontSize="lg">Discover and share your favorite recipes!</Text>
+        <Button as={RouterLink} to="/submit-recipe" colorScheme="teal" size="lg">Submit a Recipe</Button>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
           {recipes.map((recipe, index) => (
             <Box key={index} borderWidth="1px" borderRadius="lg" overflow="hidden" boxShadow="md">
